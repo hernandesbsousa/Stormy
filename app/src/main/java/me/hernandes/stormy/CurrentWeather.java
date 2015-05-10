@@ -1,12 +1,34 @@
 package me.hernandes.stormy;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.TimeZone;
+
 /**
  * Created by hernandes on 09/05/15.
  */
 public class CurrentWeather {
-    private String mIcon, mSummary;
+    private String mIcon, mSummary, mTimezone;
     private long mTime;
     private double mTemperature, mHumidity, mPrecipChance;
+
+    public CurrentWeather(String icon, String summary, long time, double temperature, double humidity, double precipChance, String timezone) {
+        mIcon = icon;
+        mSummary = summary;
+        mTime = time;
+        mTemperature = temperature;
+        mHumidity = humidity;
+        mPrecipChance = precipChance;
+        mTimezone = timezone;
+    }
+
+    public String getTimezone() {
+        return mTimezone;
+    }
+
+    public void setTimezone(String timezone) {
+        mTimezone = timezone;
+    }
 
     public String getIcon() {
         return mIcon;
@@ -54,5 +76,12 @@ public class CurrentWeather {
 
     public void setPrecipChance(double precipChance) {
         mPrecipChance = precipChance;
+    }
+
+    public String getFormattedTime() {
+        SimpleDateFormat formatter = new SimpleDateFormat("h:mm a");
+        formatter.setTimeZone(TimeZone.getTimeZone(mTimezone));
+        Date dateTime = new Date(mTime * 1000);
+        return formatter.format(dateTime);
     }
 }
