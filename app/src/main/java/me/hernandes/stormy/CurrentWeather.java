@@ -72,7 +72,7 @@ public class CurrentWeather {
                 iconId = R.mipmap.cloudy_night;
                 break;
             default:
-                iconId = R.mipmap.clear_day;
+                iconId = R.mipmap.rain;
                 break;
         }
         return iconId;
