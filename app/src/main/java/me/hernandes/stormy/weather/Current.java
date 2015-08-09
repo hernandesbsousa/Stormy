@@ -1,18 +1,20 @@
-package me.hernandes.stormy;
+package me.hernandes.stormy.weather;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.TimeZone;
 
+import me.hernandes.stormy.R;
+
 /**
  * Created by hernandes on 09/05/15.
  */
-public class CurrentWeather {
+public class Current {
     private String mIcon, mSummary, mTimezone;
     private long mTime;
     private double mTemperature, mHumidity, mPrecipChance;
 
-    public CurrentWeather(String icon, String summary, long time, double temperature, double humidity, double precipChance, String timezone) {
+    public Current(String icon, String summary, long time, double temperature, double humidity, double precipChance, String timezone) {
         mIcon = icon;
         mSummary = summary;
         mTime = time;

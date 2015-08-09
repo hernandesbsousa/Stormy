@@ -1,10 +1,12 @@
-package me.hernandes.stormy;
+package me.hernandes.stormy.ui;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.Context;
 import android.os.Bundle;
+
+import me.hernandes.stormy.R;
 
 /**
  * Created by hernandes on 09/05/15.
